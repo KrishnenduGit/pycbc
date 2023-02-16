@@ -169,6 +169,14 @@ def _check_lal_pars(p):
         lalsimulation.SimInspiralWaveformParamsInsertNonGRDBeta2(lal_pars,p['dbeta2'])
     if p['dbeta3'] is not None:
         lalsimulation.SimInspiralWaveformParamsInsertNonGRDBeta3(lal_pars,p['dbeta3'])
+   if p['LIV_A_sign'] is not None:
+        lalsimulation.SimInspiralWaveformParamsInsertNonGRLIVASign(lal_pars,p['LIV_A_sign'])
+    if p['nonGR_alpha'] is not None:
+        lalsimulation.SimInspiralWaveformParamsInsertNonGRLIVAlpha(lal_pars,p['nonGR_alpha'])
+    if p['log10lambda_eff'] is not None:
+        lalsimulation.SimInspiralWaveformParamsInsertNonGRLIVLogLambdaEff(lal_pars,p['log10lambda_eff'])
+
+
     return lal_pars
 
 def _lalsim_td_waveform(**p):

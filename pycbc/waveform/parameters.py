@@ -545,6 +545,16 @@ dbeta2 = Parameter("dbeta2",
 dbeta3 = Parameter("dbeta3",
                 dtype=float, default=0., label=r"$d\beta_3$",
                 description="Intermediate testingGR parameter.")
+#modified dispersion relation parameters
+
+log10lambda_eff = Parameter("log10lambda_eff",
+                dtype=float, default=100., label=r"$log10lambda_eff$",
+                description="Compton wavelength parameter.")
+
+LIV_A_sign  = Parameter("LIV_A_sign",
+                dtype=float, default=1., label=r"$LIV_A_sign$",
+                description="Modified dispersion amplitude sign.")
+
 #
 # =============================================================================
 #
@@ -575,7 +585,7 @@ extrinsic_params = orientation_params + location_params
 testingGR_params = ParameterList\
     ([dchi0, dchi1, dchi2, dchi3, dchi4, dchi5, dchi5l, dchi6, dchi6l,
       dchi7, dalpha1, dalpha2, dalpha3, dalpha4, dalpha5,
-      dbeta1, dbeta2, dbeta3])
+      dbeta1, dbeta2, dbeta3, LIV_A_sign, nonGR_alpha, log10lambda_eff])
 
 # intrinsic parameters of a CBC waveform. Some of these are not recognized
 # by every waveform model
